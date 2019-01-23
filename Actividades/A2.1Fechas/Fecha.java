@@ -1,10 +1,10 @@
 public class Fecha
 {
     //attributes
-    int day;
-    int month;
-    int year;
-    String complete;
+    private int day;
+    private int month;
+    private int year;
+    //private String complete;
 
     //methods
     public int getDay()
@@ -31,12 +31,24 @@ public class Fecha
     {
         this.year=year;
     }
-    public String getComplete()
-    {
-        return complete;
-    }
+   
     public void setComplete(String complete)
     {
-        this.complete=complete;
+        if(complete.length()!=10)
+        {
+            System.out.println("formato incorrecto");
+            return;
+        }
+        String[]stringDate=complete.split("/");
+        day=Integer.parseInt(stringDate[0]);
+        month=Integer.parseInt(stringDate[1]);
+        year=Integer.parseInt(stringDate[2]);
+        
+    }
+    public String getComplete()
+    {
+        String tempDate=new String("");
+        tempDate=tempDate+day+"/"+month+"/"+year; 
+        return tempDate;
     }
 }

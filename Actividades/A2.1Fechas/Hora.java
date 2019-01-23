@@ -1,10 +1,10 @@
 public class Hora
 {
     //attributes
-    int horas;
-    int minutos;
-    int segundos;
-    String complete;
+    private int horas;
+    private int minutos;
+    private int segundos;
+    //String complete;
 
     //methods
     public int getHoras()
@@ -31,12 +31,22 @@ public class Hora
     {
         this.segundos=segundos;
     }
-    public String getComplete()
-    {
-        return complete;
-    }
     public void setComplete(String complete)
     {
-        this.complete=complete;
+        if(complete.length()!=8)
+        {
+            System.out.println("formato incorrecto");
+            return;
+        }
+        String[]stringHour=complete.split(":");
+        horas=Integer.parseInt(stringHour[0]);
+        minutos=Integer.parseInt(stringHour[1]);
+        segundos=Integer.parseInt(stringHour[2]);
+    }
+    public String getComplete()
+    {
+        String tempHour=new String("");
+        tempHour=tempHour+horas+":"+minutos+":"+segundos; 
+        return tempHour;
     }
 }

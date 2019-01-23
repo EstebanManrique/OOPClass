@@ -6,10 +6,13 @@ public class TestHoras
         hora.setHoras(12);
         hora.setMinutos(10);
         hora.setSegundos(25);
-        hora.setComplete("12:10:25");
+
+        Hora otraHora=new Hora();
+        otraHora.setComplete("12:10:25");
+
         System.out.println("Hours: "+ hora.getHoras());
         System.out.println("Minutes: "+hora.getMinutos());
         System.out.println("Seconds: "+hora.getSegundos());
-        System.out.println("Complete Hour: "+hora.getComplete());
+        System.out.println("Complete Hour: "+otraHora.getComplete());
     }
 }
