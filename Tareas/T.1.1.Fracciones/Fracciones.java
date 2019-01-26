@@ -1,76 +1,109 @@
 public class Fracciones
 {
     //attributes
-    int numerador;
-    int denominador;
+    private int numerador;
+    private int denominador;
 
     //methods
+    public Fracciones()
+    {
+        System.out.println("contructor sin parámetro");
+    }
+    public Fracciones(int numerador, int denominador)
+    {
+        this.numerador=numerador;
+        this.denominador=denominador;
+    }
     public int getNumerador()
     {
         return numerador;
-    }
-    public void setNumerador(int numerador)
-    {
-        this.numerador=numerador;
     }
     public int getDenominador()
     {
         return denominador;  
     }
-    public void setDenominador(int denominador)
+    public void simplifyFraction(Fracciones myFraccion) //método para simplificar solamente
     {
-        this.denominador=denominador;
+        int counter=2;
+        int numeradorr=myFraccion.getNumerador();
+        int denominadorr=myFraccion.getDenominador();
+        {
+            while(counter<=(numeradorr/2)||counter<=(denominadorr/2))
+                if((numeradorr%counter)==0&&((denominadorr%counter)==0)){
+                    numeradorr=numeradorr/counter;
+                    denominadorr=denominadorr/counter;
+                    counter=2;
+                }
+                else{
+                    counter++;
+                }   
+            }  
+        System.out.println(numeradorr+"/"+denominadorr);
     }
-    public void simplifyFraction(int numerador, int denominador)
+    public void simplifyFraction(int numeradorr, int denominadorr) //método para simplificar dentro de operación (suma, resta, etc.)
     {
         int counter=2;
         {
-            while(counter<(numerador/2))
-            if((numerador%counter)==0&&((denominador%counter)==0)){
-                numerador=numerador/counter;
-                denominador=denominador/counter;
-                counter++;
-            }
-            else{
-                counter++;
-            }   
-        }  
-        System.out.println(numerador+"/"+denominador);
+            while(counter<=(numeradorr/2)||counter<=(denominadorr/2))
+                if((numeradorr%counter)==0&&((denominadorr%counter)==0)){
+                    numeradorr=numeradorr/counter;
+                    denominadorr=denominadorr/counter;
+                    counter=2;
+                }
+                else{
+                    counter++;
+                }   
+            }  
+        System.out.println(numeradorr+"/"+denominadorr);
     }
-    public void sumFraction(int numerador, int denominador, int numerador2, int denominador2)
+    public void sumFraction(Fracciones fraccion, Fracciones segundaf)
     {
-        if(denominador==denominador2)
+        int numeradorr=0;
+        int denominadorr=0;
+        if(fraccion.getDenominador()==segundaf.getDenominador())
         {
-            numerador=numerador+numerador2;
-            denominador=denominador2;
-            simplifyFraction(numerador, denominador);
+            numeradorr=fraccion.getNumerador()+segundaf.getNumerador();
+            denominadorr=segundaf.getDenominador();
+            simplifyFraction(numeradorr, denominadorr);
         }
         else
         {
-            numerador=((numerador*denominador2)+(numerador2*denominador));
-            simplifyFraction(numerador,(denominador*denominador2));
+            numeradorr=((fraccion.getNumerador()*segundaf.getDenominador())+(segundaf.getNumerador()*fraccion.getDenominador()));
+            denominadorr=(fraccion.getDenominador()*segundaf.getDenominador());
+            simplifyFraction(numeradorr, denominadorr);
         }
     }
-    public void substractFraction(int numerador, int denominador, int numerador2, int denominador2)
+    public void substractFraction(Fracciones fraccion, Fracciones segundaf)
     {
-        if(denominador==denominador2)
+        int numeradorr=0;
+        int denominadorr=0;
+        if(fraccion.getDenominador()==segundaf.getDenominador())
         {
-            numerador=numerador-numerador2;
-            denominador=denominador2;
-            simplifyFraction(numerador,denominador);
+            numeradorr=fraccion.getNumerador()-segundaf.getNumerador();
+            denominadorr=segundaf.getDenominador();
+            simplifyFraction(numeradorr, denominadorr);
         }
         else
         {
-            numerador=((numerador*denominador2)-(numerador2*denominador));
-            simplifyFraction(numerador, (denominador*denominador2));
+            numeradorr=((fraccion.getNumerador()*segundaf.getDenominador())-(segundaf.getNumerador()*fraccion.getDenominador()));
+            denominadorr=fraccion.getDenominador()*segundaf.getDenominador();
+            simplifyFraction(numeradorr, denominadorr);
         }
     }
-    public void multiplyFraction(int numerador, int denominador, int numerador2, int denominador2)
+    public void multiplyFraction(Fracciones fraccion, Fracciones segundaf)
     {
-       simplifyFraction((numerador*numerador2),(denominador*denominador2));
+        int numeradorr=0;
+        int denominadorr=0;
+        numeradorr=fraccion.getNumerador()*segundaf.getNumerador();
+        denominadorr=fraccion.getDenominador()*segundaf.getDenominador();
+        simplifyFraction(numeradorr, denominadorr);
     }
-    public void divideFraction(int numerador, int denominador, int numerador2, int denominador2)
+    public void divideFraction(Fracciones fraccion, Fracciones segundaf)
     {
-        simplifyFraction((denominador*numerador2),(numerador*denominador2));
+        int numeradorr=0;
+        int denominadorr=0;
+        numeradorr=fraccion.getNumerador()*segundaf.getDenominador();
+        denominadorr=fraccion.getDenominador()*segundaf.getNumerador();
+        simplifyFraction(numeradorr, denominadorr);
     }
 }
