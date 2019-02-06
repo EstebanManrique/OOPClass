@@ -4,14 +4,17 @@ public class Person
 
     private Person()
     {
-
     }
     public Persona(String name)
     {
         this.name=name;
     }
-    public void main()
+    public String getName()
     {
-        System.out.println("Soy "+name);
+        return name;
+    }
+    public void print()
+    {
+        System.out.println(name);
     }
 }

@@ -1,15 +1,17 @@
 import java.util.Date;
+import java.util.Calendar;
 
 public class Employee extends Person
 {
     private Job hisJob;
 
-    public Employee()
+    public Employee(String name, int JobId, int salary)
     {
-        hisJob=new Job(1,1000,new Date()); //COMPOSCIÓN CON JOB
+        super(name,JobId,salary);
+        hisJob=new Job(JobId, salary, new Date()); //COMPOSCIÓN CON JOB
     }
     public void print()
     {
-
+        System.out.println(hisJob);
     }
 }

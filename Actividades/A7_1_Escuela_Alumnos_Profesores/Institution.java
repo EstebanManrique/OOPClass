@@ -3,7 +3,6 @@ public class Institutiton
     private String name;
     private Student[]studentsList;
     private Teacher[]teachersList;
-
     private int contTeachers;
     private int contStudents;
 
@@ -27,9 +26,21 @@ public class Institutiton
     {
         visitor.visits(); //ASOCIACIÓN CON VISITOR
     }
+    public String getInstName()
+    {
+        return name;
+    }
     public void print()
     {
-        // detalles de la institución
+        System.out.println(name);
+        for(int counter=0;counter<contStudents;counter++)
+        {
+            System.out.println(studentsList[counter]);
+        }
+        for(int counter=0;counter<contTeachers;counter++)
+        {
+            System.out.println(teachersList[counter]);
+        }
     }
     public void hiresTeacher(Teacher teacher) //AGREGACIÓN CON TEACHER
     {
@@ -44,9 +55,20 @@ public class Institutiton
     }
     public int getNumberOfFullTimeTeachers()
     {
-        //PENDIENTES
+        int numberFullTime=0;
+        for(int counter=0;counter<contTeachers;counter++)
+        {
+            if(contTeachers%2==4) //CONDICION IMAGINARIA YA QUE NUNCA SE ESTABLECIÓ
+            {
+                numberFullTime++;
+                counter++;
+            }
+            else
+                counter++;
+        }
+        return numberFullTime;
     }
-    public void enrollStudent(Student theStudent)
+    public void enrollStudent(Student theStudent) //AGREGACIÓN CON STUDENT
     {
         if(contStudents<100)
             studentsList[contStudents++]=theStudent;
@@ -55,6 +77,17 @@ public class Institutiton
     }
     public int getNumberOfPartialTimeTeachers()
     {
-        //PENDIENTES
+        int numberPartialTime=0;
+        for(int counter=0;counter<contTeachers;counter++)
+        {
+            if(contTeachers%2==3) //CONDICION IMAGINARIA YA QUE NUNCA SE ESTABLECIÓ
+            {
+                numberPartialTime++;
+                counter++;
+            }
+            else
+                counter++;
+        }
+        return numberPartialTime;
     }
 }

@@ -9,7 +9,7 @@ public class Job
 
     private Job()
     {
-
+        //DEFAULT
     }
     public Job(int jobId, int salary, Date startDate)
     {
@@ -24,6 +24,7 @@ public class Job
     public void print()
     {
         System.out.println("the job id is: "+jobId);
-        // etc
+        System.out.println("the salary is: "+salary);
+        System.out.println("the startDate is: "+startDate);
     }
 }
