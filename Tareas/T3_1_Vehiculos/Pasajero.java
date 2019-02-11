@@ -10,10 +10,10 @@ public class Pasajero
     }
     public void acompana()
     {
-        System.out.println("ACOMPAÑANDO");
+        System.out.println(nombre+" es considerado como acompañante en el vehiculo");
     }
-    public void viajeEn()
+    public void viajeEn(Vehiculo vehiculo)
     {
-        System.out.println("VIAJANDO");
+        System.out.println(nombre+ " esta viajando en el vehiculo "+vehiculo);
     }
 }

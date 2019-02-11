@@ -16,13 +16,13 @@ public class Concesionaria
         this.numeroCochesReparando=numeroCochesReparando;
         this.enVenta=enVenta;
     }
-    public void arregla()
+    public void arregla(Vehiculo vehiculo)
     {
-        System.out.println("ARREGLA");
+        System.out.println("La conncesionaria "+nombre+", mediante el servicio de esta arreglando el vehiculo "+vehiculo);
     }
-    public void vende()
+    public void vende(Vehiculo vehiculo)
     {
-        System.out.println("VENDE");
+        System.out.println("La conncesionaria "+nombre+" ha puesto a la venta el vehiculo "+vehiculo);
     }
     public void conductorAgenda(Conductor conductor)
     {

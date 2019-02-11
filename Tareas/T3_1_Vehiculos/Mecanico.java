@@ -14,14 +14,14 @@ public class Mecanico
     }
     public void trabaja()
     {
-        System.out.println("TRABAJA");
+        System.out.println(nombre+"trabaja en la Concesionaria "+lugarDeTrabajo);
     }
-    public void repara()
+    public void repara(Vehiculo vehiculo)
     {
-        System.out.println("REPARA");
+        System.out.println(nombre+" repara el vehiculo "+vehiculo);
     }
-    public void daServicios()
+    public void daServicios(Vehiculo vehiculo)
     {
-        System.out.println("DA SERVICIOS");
+        System.out.println(nombre+" le esta dando servicio al Vehiculo "+vehiculo);
     }
 }

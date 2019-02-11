@@ -275,35 +275,35 @@ public class Vehiculo
     //METODO PARA PASAJEROS
     public void pasajeroViajaEn(Pasajero pasajero)
     {
-        pasajero.viajeEn();
+        pasajero.viajeEn(new Vehiculo());
     }
 
     //METODOS PARA CONDUCTOR
     public void conductorManeja(Conductor conductor)
     {
-        conductor.conduce();
+        conductor.conduce(new Vehiculo());
     }
 
     public void conductorCompra(Conductor conductor)
     {
-        conductor.compra();
+        conductor.compra(new Vehiculo());
     }
 
     //METODOS PARA CONCESIONARIA
     public void concesionariaArregla(Concesionaria concesionaria)
     {
-        concesionaria.arregla();
+        concesionaria.arregla(new Vehiculo());
     }
 
     public void concesionariaVende(Concesionaria concesionaria)
     {
-        concesionaria.vende();
+        concesionaria.vende(new Vehiculo());
     }
 
     //METODOS PARA MECANICO
     public void mecanicoRepara(Mecanico mecanico)
     {
-        mecanico.repara();
+        mecanico.repara(new Vehiculo());
     }
 
     public void mecanicoTrabaja(Mecanico mecanico)

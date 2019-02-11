@@ -14,17 +14,17 @@ public class Conductor
         this.favorita=favorita;
         this.deConfianza=deConfianza;
     }
-    public void conduce()
+    public void conduce(Vehiculo vehiculo)
     {
-        System.out.println("CONDUCIENDO");
+        System.out.println(nombre+" esta conduciendo el vehiculo "+vehiculo);
     }
-    public void compra()
+    public void compra(Vehiculo vehiculo)
     {
-        System.out.println("COMPRANDO");
+        System.out.println(nombre+" compra el vehiculo "+vehiculo);
     }
     public void agenda()
     {
-        System.out.println("AGENDA");
+        System.out.println(nombre+" realiza una cita en la Concesionaria de su preferencia");
     }
     public void pasajeroAcompana(Pasajero pasajero)
     {
