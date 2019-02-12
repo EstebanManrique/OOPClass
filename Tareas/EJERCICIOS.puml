@@ -1,0 +1,51 @@
+@startuml
+    class SuperClase{
+    }
+    class SubClase{
+    }
+    SuperClase <|--SubClase
+    
+    class SuperClase1{
+    }
+    class SubClase1{
+    }
+    class SubClase2{
+    }
+    Class SubClase3{
+    }
+    SuperClase1 <|--SubClase1
+    SuperClase1 <|--SubClase2
+    SuperClase1 <|--SubClase3
+
+    class SuperClase2{
+    }
+    class Subclase1_1{
+    }
+    class Subclase1_2{
+    }
+    Subclase1_1 <|--Subclase1_2
+    SuperClase2 <|--Subclase1_1
+
+    class SuperClase3{
+    }
+    class Subclase2_1{
+    }
+    class Subclase2_2{
+    }
+    class Subclas2_3{
+    }
+    SuperClase3<|--Subclas2_3
+    Subclas2_3--|> Subclase2_2
+    Subclas2_3--|> Subclase2_1
+    SuperClase3 <|--Subclase2_1
+    SuperClase3 <|--Subclase2_2
+
+    class SuperClase4{
+    }
+    class SuperClase5{
+    }
+    class SubClase3_1{
+    }
+    SuperClase4<|--SubClase3_1
+    SuperClase5<|--SubClase3_1
+@enduml
