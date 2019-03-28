@@ -7,12 +7,14 @@ public class Test
 
         Bird birdy=new Bird(); //STATIC BINDING
         Animal twetty=new Bear(); //DYNAMIC BINDING
+        Animal birddy=new Bird();
+
 
         arr[0]=birdy;
         arr[1]=twetty;
 
-        if(twetty instanceof Bird)
-            ((Bird)twetty).sing("cancion");
+        if(birddy instanceof Animal)
+            ((Bird)birddy).sing("cancion");
         else
             twetty.doHisStuff();
 
